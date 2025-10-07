@@ -1489,3 +1489,44 @@ footer {
   transform: translateY(-2px);
   opacity: 0.9;
 }
+
+/* ===== Responsive Buttons Fix (side-by-side version) ===== */
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.profile-links a,
+.profile-links button {
+  flex: 1 1 30%;
+  min-width: 100px;
+  text-align: center;
+  padding: 0.9rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Hover animation for both modes */
+.profile-links a:hover,
+.profile-links button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Mobile fine-tuning */
+@media (max-width: 600px) {
+  .profile-links {
+    gap: 8px;
+  }
+
+  .profile-links a,
+  .profile-links button {
+    flex: 1 1 45%;
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+  }
+}

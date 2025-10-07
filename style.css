@@ -1291,3 +1291,159 @@ footer {
   color: transparent;
 }
 
+/* =======================================
+   📱 MOBILE RESPONSIVENESS (ADDED)
+   ======================================= */
+
+/* General layout scaling */
+@media (max-width: 1024px) {
+  .container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .header-buttons {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .lead {
+    font-size: 0.95rem;
+  }
+
+  .projects-section {
+    padding: 1.5rem;
+  }
+
+  .project-card {
+    padding: 1.25rem;
+  }
+}
+
+/* Profile Card */
+@media (max-width: 700px) {
+  .profile-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 1.6rem;
+  }
+
+  .profile-details,
+  .profile-info {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .profile-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .profile-info {
+    padding: 1rem;
+  }
+}
+
+/* Projects grid */
+@media (max-width: 600px) {
+  .projects-grid,
+  #projectsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Skills section */
+@media (max-width: 600px) {
+  .skills {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .skill {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+}
+
+/* Contact form */
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 1.5rem;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+  }
+
+  .contact-buttons button {
+    width: 100%;
+  }
+}
+
+/* Footer */
+@media (max-width: 600px) {
+  footer {
+    font-size: 0.85rem;
+    padding: 1rem;
+  }
+}
+
+/* Popup notifications */
+@media (max-width: 500px) {
+  .popup {
+    bottom: 1rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    width: 90%;
+  }
+}
+
+/* Typography tweaks */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Ensure consistent spacing between stacked sections */
+@media (max-width: 480px) {
+  section {
+    padding: 1.5rem 1rem;
+  }
+}

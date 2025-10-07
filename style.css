@@ -1448,55 +1448,40 @@ footer {
   }
 }
 
-/* === BUTTON GROUP FIXED === */
+/* === BUTTON GROUP === */
 .button-group {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
   margin-top: 1.5rem;
 }
 
-/* General button style */
+/* Gradient Button (shared style) */
 .button-group .btn {
-  flex: 1 1 auto;
-  padding: 0.65rem 1.2rem;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.25s ease;
+  background: linear-gradient(135deg, #6366f1, #14b8a6);
+  color: #fff;
   border: none;
+  border-radius: 12px;
+  padding: 0.9rem 1.8rem;
+  font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
   text-align: center;
-  white-space: nowrap;
-  min-width: 130px;
-  max-width: 180px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+  text-decoration: none;
 }
 
-/* === Color variants === */
-.btn-outline {
-  background: transparent;
-  border: 2px solid var(--primary);
-  color: var(--primary);
+/* Hover Effect */
+.button-group .btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(20, 184, 166, 0.45);
+  opacity: 0.95;
 }
 
-.btn-outline:hover {
-  background: var(--primary);
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-.btn-primary {
-  background: linear-gradient(90deg, #6366f1, #14b8a6);
-  color: #fff;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
-
-/* === Mobile Responsiveness === */
+/* === Mobile === */
 @media (max-width: 768px) {
   .button-group {
     flex-direction: column;
@@ -1505,6 +1490,8 @@ footer {
 
   .button-group .btn {
     width: 80%;
-    max-width: 250px;
+    max-width: 260px;
   }
 }
+
+

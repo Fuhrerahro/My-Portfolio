@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xavier Ali Vergara | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div class="container">
+
+    <!-- ===== HEADER ===== -->
+    <header class="fade-in-down">
+      <div>
+        <h1 class="gradient-text">XAVIER ALI P. VERGARA</h1>
+        <p class="lead">
+          Full Stack Developer — building dynamic, responsive, and scalable web applications.
+          Passionate about modern UI, accessibility, and backend efficiency.
+        </p>
+      </div>
+      <div class="header-buttons">
+        <button id="themeToggle" class="btn secondary">🌙 Dark Mode</button>
+        <a href="#contact" class="btn primary smooth-scroll">Contact</a>
+      </div>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero fade-in">
+      <div class="card glass">
+        <h2>I’m <b>Xavier Ali Vergara</b></h2>
+        <p>
+          I design & develop web solutions using HTML, CSS, JavaScript, React, and Python.
+          Experienced in full-stack development, REST APIs, and database design.
+        </p>
+        <div class="skills">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">React</span>
+          <span class="skill">Python</span>
+          <span class="skill">Java</span>
+          <span class="skill">MySQL</span>
+        </div>
+        <div class="buttons">
+          <a href="#projects" class="btn secondary smooth-scroll">Projects</a>
+          <a href="Resume.pdf" class="btn primary" target="_blank">Download Resume</a>
+        </div>
+      </div>
+
+      <!-- ===== PROFILE CARD ===== -->
+      <div class="profile-card">
+        <div class="profile-avatar">XV</div>
+
+        <div class="profile-details">
+          <h3>Xavier Ali Vergara</h3>
+          <p class="profile-location">📍 Cabuyao, Laguna — <span>Open to work Full-time</span></p>
+          <a href="mailto:xavierali76@gmail.com" class="profile-email">xavierali76@gmail.com</a>
+
+          <!-- Social Links -->
+          <div class="profile-links">
+            <a href="https://github.com/Fuhrerahro" target="_blank" title="GitHub">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/xavier-ali-vergara-81a3b3358/" target="_blank" title="LinkedIn">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+            </a>
+            <a href="https://www.facebook.com/xavier.ali.vergara" target="_blank" title="Facebook">
+              <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/fuhrerahro/" target="_blank" title="Instagram">
+              <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+            </a>
+          </div>
+
+          <!-- Toggle Button -->
+          <button class="btn secondary toggle-info">👤 View Details</button>
+        </div>
+
+        <!-- Collapsible Info -->
+        <div class="profile-info collapsed" id="infoPanel">
+          <h4>🎯 Personal Details</h4>
+          <ul>
+            <li><strong>Full Name:</strong> Xavier Ali P. Vergara</li>
+            <li><strong>Age:</strong> 20</li>
+            <li><strong>Gender:</strong> Male</li>
+            <li><strong>Location:</strong> Cabuyao, Laguna, Philippines</li>
+            <li><strong>Contact:</strong> +63 956 650 4030</li>
+          </ul>
+
+          <h4>🎓 Education</h4>
+          <ul>
+            <li><strong>BS in Computer Science</strong><br> University of Cabuyao</li>
+            <li><strong>Senior High School:</strong><br> Citi Global College Cabuyao (STEM Strand)</li>
+            <li><strong>High School:</strong><br> Cabuyao Integrated National High School</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ===== ABOUT ME SECTION ===== -->
+      <div class="profile-info">
+        <h4>👋 About Me</h4>
+        <p>
+          Hi! I'm <strong>Xavier Ali P. Vergara</strong>, a passionate full-stack developer from Cabuyao, Laguna.
+          I love creating responsive and accessible web applications using modern technologies and frameworks.
+          My goal is to deliver clean, maintainable code and visually engaging user experiences.
+        </p>
+
+        <h4>💼 Technical Skills</h4>
+        <ul class="skills-list">
+          <li>HTML, CSS, JavaScript, React, Java</li>
+          <li>Node.js, Express, MongoDB</li>
+          <li>Python, MySQL, REST APIs</li>
+          <li>UI/UX Design Principles</li>
+        </ul>
+
+        <h4>🎯 Career Goals</h4>
+        <p>
+          I aim to work in a collaborative environment where I can grow as a developer, contribute to open-source
+          projects, and build meaningful software that improves people's lives.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="fade-in">
+      <h2>Selected Projects</h2>
+
+      <div class="filter-bar">
+        <label for="filter">Filter:</label>
+        <select id="filter">
+          <option value="all">All</option>
+          <option value="webui">Web UI</option>
+          <option value="webtooling">Web Tooling</option>
+          <option value="uitooling">UI Tooling</option>
+        </select>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <a href="https://fuhrerahro.github.io/Portfolio/" target="_blank" class="project-card webui">
+          <h3>Portfolio (this site)</h3>
+          <p>A responsive portfolio with theme switch, animations, and EmailJS integration.</p>
+          <span>webui</span>
+        </a>
+
+        <a href="https://fuhrerahro.github.io/1stProj/" target="_blank" class="project-card webtooling">
+          <h3>E-commerce App</h3>
+          <p>A simple real-estate app for buying and renting properties.</p>
+          <span>webtooling</span>
+        </a>
+
+        <a href="https://designsystem.dev" target="_blank" class="project-card uitooling">
+          <h3>Design System</h3>
+          <p>Reusable component library with accessibility and design tokens.</p>
+          <span>uitooling</span>
+        </a>
+
+        <a href="https://blogengine.dev" target="_blank" class="project-card webtooling">
+          <h3>Blog Engine</h3>
+          <p>Static site generator built with Node.js and Markdown.</p>
+          <span>webtooling</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact-section fade-in-up" id="contact">
+  <div class="contact-container">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <div class="form-group">
+        <input type="text" name="name" id="name" required />
+        <label for="name">Your name</label>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" id="email" required />
+        <label for="email">Your email</label>
+      </div>
+      <div class="form-group">
+        <input type="text" name="subject" id="subject" />
+        <label for="subject">Subject</label>
+      </div>
+      <div class="form-group">
+        <textarea name="message" id="message" rows="5" required></textarea>
+        <label for="message">Message</label>
+      </div>
+
+      <div class="form-buttons">
+        <button type="reset" class="btn-secondary">Reset</button>
+        <button type="submit" class="btn-primary">Send message</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      © 2025 <b>Xavier Ali Vergara</b> — Built using HTML, CSS & JavaScript
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

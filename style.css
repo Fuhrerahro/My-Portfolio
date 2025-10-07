@@ -1,0 +1,1293 @@
+/* === THEME VARIABLES === */
+:root {
+  --bg: #0d1117;
+  --text: #e6edf3;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --primary: #6366f1;
+  --secondary: #14b8a6;
+  --glow: rgba(99, 102, 241, 0.4);
+}
+
+/* Light mode overrides */
+[data-theme="light"] {
+  --bg: #f5f7fa;
+  --text: #1a1a1a;
+  --card-bg: rgba(0, 0, 0, 0.05);
+  --primary: #4f46e5;
+  --secondary: #0d9488;
+  --glow: rgba(99, 102, 241, 0.15);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Gradient name */
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.lead {
+  opacity: 0.8;
+  font-size: 1rem;
+  max-width: 650px;
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.glass {
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  padding: 0.6rem 1.3rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+.btn.primary:hover {
+  box-shadow: 0 0 15px var(--glow);
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn.secondary:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Skills */
+.skills {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  background: rgba(99, 102, 241, 0.15);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  display: block;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  background: rgba(99, 102, 241, 0.15);
+  box-shadow: 0 0 20px var(--glow);
+}
+
+/* Avatar */
+.avatar {
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glow {
+  box-shadow: 0 0 15px var(--glow);
+}
+
+/* Contact Form */
+form input, form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+[data-theme="light"] form input,
+[data-theme="light"] form textarea {
+  background: rgba(0, 0, 0, 0.05);
+  color: #111;
+}
+
+form input:focus, form textarea:focus {
+  outline: 2px solid var(--primary);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  opacity: 0.6;
+}
+
+/* === PROFILE CARD === */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(145deg, rgba(35, 38, 47, 0.9), rgba(17, 19, 23, 0.95));
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 15px var(--glow);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="light"] .profile-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.9));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 0 15px var(--glow);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px var(--glow);
+}
+
+.profile-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  flex-wrap: wrap;
+}
+
+.profile-avatar {
+  background: var(--glow);
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 700;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-details {
+  flex: 1;
+  min-width: 220px;
+}
+
+.profile-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.profile-links img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease, filter 0.3s;
+}
+
+[data-theme="light"] .profile-links img {
+  filter: brightness(0);
+}
+
+.profile-links a:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.5);
+}
+
+.profile-info {
+  flex: 1.2;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  min-width: 250px;
+}
+
+.profile-info h4 {
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 0.25rem;
+}
+
+.profile-info ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.profile-info li {
+  margin: 0.25rem 0;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.profile-avatar {
+  background: linear-gradient(135deg, var(--primary), #8b5cf6);
+  color: white;
+  font-weight: 700;
+  font-size: 1.8rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px var(--glow);
+}
+
+.profile-details h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.profile-location {
+  margin: 0.3rem 0 0.8rem;
+  font-size: 0.95rem;
+  color: rgba(160, 163, 173, 0.9);
+}
+
+[data-theme="light"] .profile-location {
+  color: rgba(40, 40, 40, 0.6);
+}
+
+.profile-email {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.profile-email:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.profile-links a {
+  color: var(--primary);
+  text-decoration: none;
+  margin-right: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.profile-links a:hover {
+  color: #c4b5fd;
+  transform: translateY(-2px);
+}
+
+/* === POPUP NOTIFICATIONS === */
+.popup {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--glow);
+  box-shadow: 0 0 25px var(--glow);
+  padding: 12px 20px;
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 9999;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+.popup.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.popup.success {
+  border-color: rgba(34, 197, 94, 0.6);
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.5);
+}
+
+.popup.error {
+  border-color: rgba(239, 68, 68, 0.6);
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.4);
+}
+
+.profile-links {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.profile-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-links a:hover {
+  transform: scale(1.2);
+}
+
+/* Icon images */
+.profile-links img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+/* Light mode adjustments */
+[data-theme="light"] .profile-links img {
+  filter: none;
+}
+
+/* ===== COLORED HOVERS ===== */
+.profile-links a.github:hover {
+  background: #333;
+  box-shadow: 0 0 10px #333;
+}
+
+.profile-links a.linkedin:hover {
+  background: #0077b5;
+  box-shadow: 0 0 10px #0077b5;
+}
+
+.profile-links a.facebook:hover {
+  background: #1877f2;
+  box-shadow: 0 0 10px #1877f2;
+}
+
+.profile-links a.instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  box-shadow: 0 0 10px #d6249f;
+}
+
+/* Make all icons white in dark mode */
+.profile-links img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+/* Make icons dark in light mode */
+[data-theme="light"] .profile-links img {
+  filter: brightness(0);
+}
+
+/* LinkedIn hover fix — stays visible in both modes */
+.profile-links a.linkedin:hover img {
+  filter: brightness(0) invert(1);
+}
+
+/* Optional — glowing hover effect */
+.profile-links a.linkedin:hover {
+  background: #0077b5;
+  box-shadow: 0 0 10px #0077b5;
+}
+
+/* COLLAPSIBLE INFO PANEL */
+.profile-info {
+  flex: 1.2;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  min-width: 250px;
+  max-height: 1000px;
+  overflow: hidden;
+  opacity: 1;
+  transition: all 0.4s ease;
+}
+
+.profile-info.collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.toggle-info {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle-info:hover {
+  background: var(--glow);
+  color: #fff;
+}
+
+/* === Collapsible Personal Info Section === */
+.profile-info {
+  flex: 1.2;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  min-width: 250px;
+  max-height: 1000px;
+  opacity: 1;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: 
+    max-height 0.5s ease,
+    opacity 0.4s ease,
+    padding 0.4s ease,
+    margin 0.4s ease,
+    transform 0.5s ease;
+}
+
+/* When collapsed (hidden) */
+.profile-info.collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  transform: translateY(-10px);
+}
+
+/* Toggle button */
+.toggle-info {
+  margin-top: 1rem;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  background: rgba(99, 102, 241, 0.15);
+  border-radius: 0.5rem;
+  color: var(--text);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.toggle-info:hover {
+  background: var(--glow);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* === Social Media Links === */
+.profile-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.profile-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-links a img {
+  width: 22px;
+  height: 22px;
+  filter: invert(1); /* Makes icons white on dark mode */
+  transition: filter 0.3s ease;
+}
+
+/* === Hover Effects === */
+.profile-links a:hover {
+  background: var(--glow);
+  transform: scale(1.1);
+  border-color: var(--glow);
+}
+
+[data-theme="light"] .profile-links a img {
+  filter: invert(0); /* Make icons dark on light mode */
+}
+
+.profile-info {
+  background: var(--card-bg);
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-info h4 {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.3rem;
+}
+
+.profile-info p {
+  margin-bottom: 1rem;
+  color: rgba(230, 230, 230, 0.85);
+}
+
+.profile-info ul.skills-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.profile-info ul.skills-list li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+[data-theme="light"] .profile-info ul.skills-list li {
+  background: rgba(0, 0, 0, 0.05);
+  color: #222;
+}
+
+/* ==== SOCIAL ICON FIX ==== */
+.profile-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin: 6px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.profile-links a img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Make ONLY GitHub icon white (it’s black SVG by default) */
+.profile-links a[title="GitHub"] img {
+  filter: brightness(0) invert(1);
+}
+
+/* Keep PNG icons normal */
+.profile-links a[title="Facebook"] img,
+.profile-links a[title="Instagram"] img,
+.profile-links a[title="LinkedIn"] img {
+  filter: none;
+}
+
+/* Hover effects */
+.profile-links a:hover img {
+  transform: scale(1.1);
+}
+
+.profile-links a[title="GitHub"]:hover {
+  background-color: whitesmoke;
+}
+.profile-links a[title="LinkedIn"]:hover {
+  background-color: #0a66c2;
+}
+.profile-links a[title="Facebook"]:hover {
+  background-color: #1877f2;
+}
+.profile-links a[title="Instagram"]:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+
+[data-theme="light"] body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+[data-theme="light"] section {
+  background: var(--card-bg);
+  color: var(--text);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] h2,
+[data-theme="light"] p,
+[data-theme="light"] span {
+  color: var(--text);
+  opacity: 1 !important;
+}
+
+/* Skill tags */
+[data-theme="light"] .skills span {
+  background: #eef1f8;
+  border: 1px solid #c7cbe3;
+  color: #111827;
+}
+
+/* Fix icon visibility between light/dark themes */
+.profile-links img {
+  width: 28px;
+  height: 28px;
+  filter: none;
+  transition: filter 0.3s ease;
+}
+
+/* When light mode — make GitHub dark logo visible */
+[data-theme="light"] .profile-links img[src*="github"] {
+  filter: invert(1) brightness(0.2);
+}
+
+/* Optional: Slight glow effect for hover */
+.profile-links a:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Base card styling - no border */
+/* === PROJECTS SECTION === */
+.projects-section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+/* === FILTER DROPDOWN === */
+.filter-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.filter-container label {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.filter-container select {
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+  background: var(--card-bg);
+  color: var(--text);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+[data-theme="dark"] .filter-container select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+}
+
+.filter-container select:hover {
+  box-shadow: 0 0 10px var(--glow);
+  transform: scale(1.02);
+}
+
+/* === PROJECTS GRID === */
+#projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+/* === PROJECT CARD === */
+.project-card {
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: left;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .project-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* === CARD HOVER EFFECT === */
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(99, 102, 241, 0.15);
+  border-color: var(--accent);
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: var(--text);
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* === TAG === */
+.project-card .tag {
+  display: inline-block;
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .project-card .tag {
+  background: rgba(99, 102, 241, 0.15);
+}
+
+.project-card:hover .tag {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Theme variables */
+:root[data-theme="light"] {
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.1);
+  --text-secondary: #555;
+  --tag-bg: rgba(0, 0, 0, 0.05);
+  --tag-text: #333;
+  --accent: #0072f5;
+}
+
+:root[data-theme="dark"] {
+  --card-bg: rgba(30, 30, 40, 0.65);
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.4);
+  --text-secondary: #cfcfcf;
+  --tag-bg: rgba(255, 255, 255, 0.1);
+  --tag-text: #e0e0e0;
+  --accent: #3b82f6;
+}
+
+/* === THEME TOGGLE BUTTON === */
+.theme-toggle-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--card-border);
+  background-color: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: var(--transition);
+}
+
+.theme-toggle-btn:hover {
+  box-shadow: 0 0 10px var(--glow);
+  transform: translateY(-2px);
+}
+
+.theme-toggle-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--text);
+  transition: var(--transition);
+}
+
+/* ================================
+   🔔 POPUP ALERT SYSTEM
+   ================================ */
+.popup {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(30px);
+  min-width: 260px;
+  max-width: 90%;
+  padding: 0.9rem 1.4rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  z-index: 9999;
+  opacity: 0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px var(--glow);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* ✅ Visible State */
+.popup.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 🌙 Dark / ☀️ Light Theme Aware */
+[data-theme="light"] .popup {
+  background: rgba(255, 255, 255, 0.8);
+  color: #111827;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .popup {
+  background: rgba(25, 25, 35, 0.8);
+  color: #e6edf3;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 🔵 Info */
+.popup.info {
+  border-left: 4px solid var(--accent);
+  color: var(--accent);
+}
+
+/* 🟢 Success */
+.popup.success {
+  border-left: 4px solid #22c55e;
+  color: #16a34a;
+}
+
+/* 🔴 Error */
+.popup.error {
+  border-left: 4px solid #ef4444;
+  color: #dc2626;
+}
+
+/* 🟡 Warning */
+.popup.warning {
+  border-left: 4px solid #f59e0b;
+  color: #b45309;
+}
+
+/* 🧭 Mobile-Friendly Adjustments */
+@media (max-width: 600px) {
+  .popup {
+    bottom: 1rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+}
+
+/* ================================
+   📬 CONTACT SECTION
+   ================================ */
+/* === CONTACT FORM (FINAL VERSION) === */
+.contact-container {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  max-width: 700px;
+  margin: 0 auto;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Title */
+.contact-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2rem;
+}
+
+/* Form group */
+.form-group {
+  position: relative;
+  margin-bottom: 1.6rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1.2rem 1rem 0.8rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  background: var(--input-bg, #f5f5f5);
+  color: var(--text-dark, #111);
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+/* Floating label */
+.form-group label {
+  position: absolute;
+  top: 1.1rem;
+  left: 1rem;
+  font-size: 0.9rem;
+  color: var(--primary);
+  pointer-events: none;
+  transition: all 0.25s ease;
+  background: var(--card-bg);
+  padding: 0 0.25rem;
+}
+
+/* Float when focused or filled */
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -0.55rem;
+  font-size: 0.75rem;
+  color: var(--primary);
+}
+
+/* Focus effects */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.15);
+}
+
+/* Buttons */
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact-buttons button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Reset */
+.contact-buttons .reset-btn {
+  background: transparent;
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+}
+
+.contact-buttons .reset-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Send */
+.contact-buttons .send-btn {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.contact-buttons .send-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* === DARK MODE === */
+[data-theme="dark"] .contact-container {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  color: var(--text);
+}
+
+[data-theme="dark"] .form-group label {
+  color: var(--secondary);
+  background: rgba(20, 20, 20, 0.95);
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group textarea:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 10px rgba(20, 184, 166, 0.25);
+}
+
+/* === PLACEHOLDER INVISIBLE (for label float logic) === */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: transparent;
+}
+
+
+
+/* 🟦 Input focus animation */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.35);
+  transform: scale(1.01);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group textarea:focus {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+}
+
+/* Floating label */
+.form-group label {
+  position: absolute;
+  top: 1rem;
+  left: 1.2rem;
+  color: #6b7280;
+  font-size: 0.95rem;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+/* Float animation */
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -0.6rem;
+  left: 0.9rem;
+  background: var(--card-bg);
+  padding: 0 0.4rem;
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+/* ===== Buttons ===== */
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 0.8rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Primary button */
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6, #14b8a6);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Secondary button */
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn-secondary:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 2rem 1.4rem;
+  }
+}
+
+
+/* === CONTACT FORM - FLOATING LABEL FIXED === */
+.form-group {
+  position: relative;
+  margin-bottom: 1.6rem;
+}
+
+/* Input / Textarea */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1.2rem 1rem 0.8rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+  background: var(--input-bg, #f5f5f5);
+  color: var(--text-dark, #111);
+  outline: none;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+/* Label */
+.form-group label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  color: var(--primary);
+  background: var(--input-bg, #f5f5f5);
+  padding: 0 0.35rem;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  border-radius: 4px;
+}
+
+/* Float when focused or filled */
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -0.6rem;
+  left: 0.85rem;
+  font-size: 0.75rem;
+  color: var(--primary);
+  background: var(--card-bg);
+}
+
+/* Focus style */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.15);
+}
+
+/* Dark Mode Fix */
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  color: var(--text);
+}
+
+[data-theme="dark"] .form-group label {
+  background: rgba(30, 30, 30, 0.9);
+  color: var(--secondary);
+}
+
+[data-theme="dark"] .form-group input:focus + label,
+[data-theme="dark"] .form-group textarea:focus + label {
+  background: rgba(20, 20, 20, 1);
+  color: var(--secondary);
+}
+
+/* Prevent placeholder text */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: transparent;
+}
+

@@ -1495,7 +1495,7 @@ footer {
 }
 
 /* === DETAILS CARD CONTAINER === */
-.details-card {
+.profile-info collapsed {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   padding: 1.5rem 1.8rem;
@@ -1507,7 +1507,7 @@ footer {
 }
 
 /* === SECTION HEADINGS === */
-.details-card h3 {
+.profile-info collapsed h3 {
   display: flex;
   align-items: center;
   font-size: 1.2rem;
@@ -1516,17 +1516,17 @@ footer {
   margin-bottom: 0.75rem;
 }
 
-.details-card h3 svg {
+.profile-info collapsed h3 svg {
   margin-right: 0.5rem;
 }
 
 /* === TEXT STYLES === */
-.details-card p {
+.profile-info collapsed p {
   margin: 0.4rem 0;
   font-size: 0.95rem;
 }
 
-.details-card strong {
+.profile-info collapsed strong {
   color: #fff;
 }
 
